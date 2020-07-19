@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			#notmatch{
+					display:none;
+			}
+			#maindiv{
+					display:none;
+			}
+		</style>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="realEs.css">
+		
+		
+	</head>
+
+	<body>
+		<div id="fb-root" style="color:blue;"></div>
+		
+				
+		
+		<form class="form-inline" action="realEs.php" method="GET" role="form"> 
+	
+			
+				
+				<nav class="navbar">
+					<div class="container pull-left">
+						<h1 class="navbar-brand" href="#" style="color:orange"><strong>Search Your Property Here</strong></h1>
+					</div>
+				</nav>
+				<br>
+				<div class="popup" onclick="myPopUpFunction()" style="color:white">&nbsp&nbsp&nbsp Click here to see an <span style="color:red">example!</span>
+				  <span class="popuptext" id="myPopup"><p style="color:white">For example, input as follows:<br> <table style="position: relative; text-align: center;left: 20%;"><tr><td align="right"><strong style="color:blue">Address</strong>:</td><td align="left">  1152 W 37th PL </td></tr><tr><td align="right"><strong style="color:blue">City</strong>:</td><td align="left"> Los Angeles</td></tr><tr><td align="right"><strong style="color:blue">State</strong>:</td><td align="left"> CA</td></tr></table></p></span>
+				</div>
+				<br>
+				<br>
+				<div class="form-group has-feedback" >
+					<label for="street"  class="col-md-5 control-label" style="color:orange" align="right">Street Address*:</label>
+					<div class="col-md-4">
+						<table><tr><td><input type="text" class="form-control" name="street" id="street" placeholder="Address" style="font-family: Sans-serif;width:180px;font-size:20;color:black;"/> </td></tr>
+						<tr> <td height="20px"><div id="st_v" align="right"></div> </td></tr></table>
+					</div>
+				</div>
+				
+				
+				&nbsp
+				
+				<div class="form-group">
+					<label for="city" class="col-md-3 control-label" style="color:orange" align="right">City*:</label>
+					<div class="col-md-5">
+						<table><tr><td><input type="text" class="form-control" name="city" id="city" placeholder="City" style="font-family: Sans-serif;width:180px;font-size:20;color:black;"/> </td></tr>
+						<tr><td height="20px"> <div id="c_v" align="right"></div></td></tr></table>
+					</div>
+				</div>
+				
+				&nbsp &nbsp &nbsp &nbsp &nbsp
+				
+				<div class="form-group">
+					<label for="States" class="col-md-2 control-label" style="color:orange">State*:</label>
+					<div class="col-md-6">
+						<table>
+							<tr><td id="StatesTD">
+								<select name="States" name="States" id="States"  class="form-control" style="font-family: Sans-serif;font-size:20;color:#7e7d7d;height:34px;">
+									<option value="a" selected>&nbsp </option>  
+									<option value="AL">AL</option> 
+									<option value="AK">AK</option>
+									<option value="AZ">AZ</option>
+									<option value="AR">AR</option>
+									<option value="CA">CA</option>
+									<option value="CO">CO</option>
+									<option value="CT">CT</option>
+									<option value="DE">DE</option>
+									<option value="DC">DC</option>
+									<option value="FL">FL</option>
+									<option value="GA">GA</option>
+									<option value="HI">HI</option>
+									<option value="ID">ID</option>
+									<option value="IL">IL</option>
+									<option value="IN">IN</option>
+									<option value="IA">IA</option>
+									<option value="KS">KS</option>
+									<option value="KY">KY</option>
+									<option value="LA">LA</option>
+									<option value="ME">ME</option>
+									<option value="MD">MD</option>
+									<option value="MA">MA</option>
+									<option value="MI">MI</option>
+									<option value="MN">MN</option>
+									<option value="MS">MS</option>
+									<option value="MO">MO</option>
+									<option value="MT">MT</option>
+									<option value="NE">NE</option>
+									<option value="NV">NV</option>
+									<option value="NH">NH</option>
+									<option value="NJ">NJ</option>
+									<option value="NM">NM</option>
+									<option value="NY">NY</option>
+									<option value="NC">NC</option>
+									<option value="ND">ND</option>
+									<option value="OH">OH</option>
+									<option value="OK">OK</option>
+									<option value="OR">OR</option>
+									<option value="PA">PA</option>
+									<option value="RI">RI</option>
+									<option value="SC">SC</option>
+									<option value="SD">SD</option>
+									<option value="TN">TN</option>
+									<option value="TX">TX</option>
+									<option value="UT">UT</option>
+									<option value="VT">VT</option>
+									<option value="VA">VA</option>
+									<option value="WA">WA</option>
+									<option value="WV">WV</option>
+									<option value="WI">WI</option>
+									<option value="WY">WY</option>
+
+								</select> 
+							</td>
+							</tr>
+							<tr> <td height="20px" id="Sta_v"></td></tr>
+						</table>
+					</div>
+				</div>
+				
+				
+				
+				<div class="form-group">
+					<div class="col-md-3 control-label">
+						<table><tr><td><input type="button" class="col-md-1 control-label" value="Submit" align="left" style="height:35px;width:100px;background-color:orange;color:white;border-radius:7px; border: 1px solid orange;" name="search" id="search"/></td></tr><tr><td height="19px"></td></table>
+					</div>
+				</div>
+				
+				
+				<div class="form-group pull-right">
+					<div class="col-md-3 control-label" align="center">
+						<table><tr><td><img src="http://www.zillow.com/widgets/GetVersionedResource.htm?path=/static/logos/Zillowlogo_150x40_rounded.gif" width="150" height="40" alt="Zillow Real Estate Search"/></td></tr><tr><td height="19px"></td></table>
+					</div>
+				</div>
+					
+			
+			<br><br><br>
+			<hr></hr>
+			
+			<span id="jsDeb"></span>
+			
+			<div id="mainDiv" class="form-group" style="position: relative; text-align: center;left: 50%; ">
+				
+					<ul class="nav nav-tabs">
+						<li class="active" id="tabs1"><a data-toggle="tab" id="tab1" href="#sectionA">Basic Info</a></li>
+						<li id="tabs2"><a data-toggle="tab" id="tab2" href="#sectionB" onclick="mapShowTab();">Map</a></li>
+						<li id="tabs3"><a data-toggle="tab" id="tab3" href="#sectionC">Historical Zestimates</a></li>
+						<li id="tabs4"><a data-toggle="tab" id="tab4" href="#sectionD">Your Queries</a></li>
+						<li id="tabs5"><a data-toggle="tab" id="tab4" href="#sectionE">Developer Info</a></li>
+					</ul>
+
+					<div class="tab-content control-label" id="tabs" style="border-radius:2px;">
+						<div id="sectionA" class="tab-pane fade in active">
+							
+							<div class="rl_shell table-responsive">	
+								<table class="table table-striped condensed" width="800px;">
+									
+									<tr> <td align="left" id="moreDetails" colspan="3"></td>
+									<td id="fbbut" align="right" height="20px"></td></tr>
+									
+									<tr>
+										<td align="left"> Property Type:</td>
+										<td id="r1d2" align="right"></td>
+										<td align="left"> Last Sold Price:</td>
+										<td id="r1d4" align="right"><p id="b0"></p></td>
+									</tr>
+									
+									<tr>
+										<td align="left" height="30px"> Year Built:</td>
+										<td id="r2d2" align="right"></td>
+										<td align="left"> Last Sold Date:</td>
+										<td id="r2d4" align="right"></td>
+									</tr>
+									
+									<tr>
+										<td align="left" height="30px"> Lot Size:</td>
+										<td id="r3d2" align="right"></td>
+										<td id="r3d3" align="left">Zestimate <sup> &#0174 </sup> Property Estimate as of</td>
+										<td id="r3d4" align="right"></td>
+									</tr>
+									
+									<tr>
+										<td align="left"> Finished Area:</td>
+										<td id="r4d2" align="right"></td>
+										<td align="left"> 30 Days Overall Change: </td>
+										<td id="r4d4" align="right"></td>
+									</tr>
+									
+									
+									<tr>
+										<td align="left" > Bathrooms:</td>
+										<td id="r5d2" align="right"></td>
+										<td align="left"> All Time Property Range:</td>
+										<td id="r5d4" align="right"></td>
+									</tr>
+									
+									<tr>
+										<td align="left" > Bedrooms:</td>
+										<td id="r6d2" align="right"></td>
+										<td id="r6d3" align="left" > Rent Zestimate <sup> &#0174 </sup> Valuation as of </td>
+										<td id="r6d4" align="right"></td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td align="left" > Tax Assessment Year:</td>
+										<td id="r7d2" align="right"></td>
+										<td align="left"> 30 Days Rent Change:</td>
+										<td id="r7d4" align="right"></td>
+									</tr>
+									
+									<tr>
+										<td align="left"> Tax Assessment:</td>
+										<td id="r8d2" align="right"></td>
+										<td align="left"> All Time Rent Range:</td>
+										<td id="r8d4" align="right"></td>
+									</tr>
+									
+								</table>
+							</div>
+						</div>
+						
+						<div id="sectionB" class="tab-pane fade">
+								<div id="map-canvas">&nbsp;</div>
+						</div>
+						
+						<div id="sectionC" class="tab-pane fade">
+							
+								<div id="myCarousel" class="carousel slide" data-ride="carousel"> 
+								  
+								  <div>
+								  <ol class="carousel-indicators"  style="position:relative; height:0px">
+									<li data-target="#myCarousel" data-slide-to="0" id="Carousel1" class="active" style="border-color:red; background-color:yellow;"></li>
+									<li data-target="#myCarousel" data-slide-to="1" id="Carousel2" style="border-color:red; background-color:yellow;"></li>
+									<li data-target="#myCarousel" data-slide-to="2" id="Carousel3" style="border-color:red; background-color:yellow;"></li>
+								  </ol>
+								  </div>
+								  <div class="carousel-inner" role="listbox"> 
+									<div class="item active">
+									  <div id="pic1" class="carPic" style="margin-top:-1px;"></div> 
+									  <div class="container">
+										<div class="carousel-caption" style="background:rgba(0,0,0,0.5);">
+										  <h4 class="CapHis">Historical Zestimate for the past 1 year&nbsp&nbsp&nbsp</h4>
+										  <p class="carCap"></p>
+										</div>
+									  </div>
+									</div>
+									<div class="item">
+									  <div id="pic2" class="carPic" style="margin-top:-1px;"></div>
+									  <div class="container">
+										<div class="carousel-caption" style="background:rgba(0,0,0,0.5);">
+										  <h4 class="CapHis">Historical Zestimate for the past 5 years&nbsp</h4>
+										  <p class="carCap"></p>
+										</div>
+									  </div>
+									</div>
+									<div class="item">
+									  <div id="pic3" class="carPic" style="margin-top:-1px;"></div>
+									  <div class="container">
+										<div class="carousel-caption" style="background:rgba(0,0,0,0.5);">
+										  <h4 class="CapHis">&nbsp Historical Zestimate for the past 10 years</h4>
+										  <p class="carCap"></p>
+										</div>
+									  </div>
+									</div>
+								  </div>
+								  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+									<span class="glyphicon glyphicon-chevron-left" style="color:orange;"></span>
+									<span class="sr-only">Previous</span>
+								  </a>
+								  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+									<span class="glyphicon glyphicon-chevron-right" style="color:orange;"></span>
+									<span class="sr-only">Next</span>
+								  </a>
+								</div>
+						</div>
+						
+						<div id="sectionD" class="tab-pane fade" >
+							<div class="rl_shell table-responsive">
+								<table class="table table-striped condensed" width="700px;" id="mySqlIPs">
+
+								</table>
+							</div>
+							<br>
+						</div>
+						
+						<div id="sectionE" class="tab-pane fade" >
+							<br>
+							<table style="position: relative; text-align: center;" id="fithTab">
+								<tr>
+									<td rowspan=4><a href="https://www.linkedin.com/in/keyvan-noury-9a086460/" target="_blank"><img src="myself.jpg" style="width:162px;height:170px;">&nbsp&nbsp</a></td>
+									<td>Name:</td>
+									<td>Keyvan Noury</td>
+								</tr>
+								<tr>
+									<td>Occupation:</td>
+									<td>Software Engineer</td>
+								</tr>
+								<tr rowspan=2>
+									<td colspan=2 >
+									<a href="https://www.youtube.com/user/TheKeyvanJan/videos" style="text-decoration:none; color:cyan; font-weight: bold;" target="_blank">Link To Youtube Channel</a></td>
+								</tr>
+							</table>
+							<br>
+						</div>
+						
+					</div>
+					<br><br><br>
+			</div>
+			
+			<div id="notmatch" style="position: relative; ">
+				<table><td width="600px" height="160px"><h1><strong>Not an exact match found--Verify that the given address is correct.</strong></h1>
+				</td></table>
+			</div>
+
+		</form>
+		
+		<script>
+			
+		</script>
+		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBLsZBb_h1U0Rho3mSK2eze0_AI0NhpeA&sensor=true"></script>
+		<script type="text/javascript" src="realEs.js"></script>
+		
+		<script>
+			$('#myCarousel').carousel({
+				interval:5000,
+				cycle: true
+			})
+		</script>
+		
+		<NOSCRIPT>	
+	</body>
+</html>

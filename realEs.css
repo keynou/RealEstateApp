@@ -1,0 +1,532 @@
+
+			body {
+				background: url("home.jpg"); 
+				overflow-y:auto;
+				overflow-x:hidden;
+			}
+			
+			h1{
+				color: orange;
+			}
+			
+			.nav-tabs > li.active > a,
+			.nav-tabs > li.active > a:hover,
+			.nav-tabs > li.active > a:focus{
+			color: #555555;
+			background-color: orange;  
+			border-color: orange;
+			}
+			
+			
+
+			
+			.carousel-caption {
+				position: absolute;
+				z-index: 50;
+				left: -100px;
+				bottom: 0;
+				width: 1500px;
+				height: 100px;
+			}
+			
+			
+			.active>#tab1{
+					background-color:white;
+					border-color:white;
+					opacity: 1;
+			}
+			#tab1{
+					background-color:orange;
+					opacity: 0.9;
+			}
+			.active>#tab2{
+					background-color:white;
+					border-color:white;
+					opacity: 1;
+			}
+			#tab2{
+					background-color:orange;
+					opacity: 0.9;
+			}
+			
+			.active>#tab3{
+					background-color:white;
+					border-color:white;
+					opacity: 1;
+			}
+			#tab3{
+					background-color:orange;
+					opacity: 0.9;
+			}
+			.active>#tab4{
+					background-color:white;
+					border-color:white;
+					opacity: 1;
+			}
+			#tab4{
+					background-color:orange;
+					opacity: 0.9;
+			}
+			
+			@media screen and (max-width:550px){
+				#States {
+					width:180px;
+				}
+				#Sta_v{
+					text-align: right;
+				}
+				.rl_shell {	
+					float: left/right;
+					overflow-x:auto;
+					max-width:300px;
+					height: 370px;
+					background-color: white;
+				}
+				#mainDiv {
+					height: 20px;width:300px;
+					margin-left: -150px;
+				}
+				
+				#myCarousel{
+					 width:300px;
+					 height:250px;
+				}
+				
+				
+				#Carousel1{
+					margin-bottom:-225px;
+				}
+				
+				#Carousel2{
+					margin-bottom:-225px;
+				}
+				
+				#Carousel3{
+					margin-bottom:-225px;
+				}
+				
+				.carousel-indicators{
+					margin-left:35px;
+				}
+				
+				#zilBot{
+					margin-top:5px;
+					margin-left:-10px;
+					position:relative;
+				}
+				
+				#sectionA{
+					background-color:white;
+					height: 370px;
+					width: 299px;
+				}
+				
+				#sectionB{
+					background-color:white;
+					height: 245px;
+					width: 299px;
+				}
+				
+				#sectionC{
+					background-color:white;
+					height: 245px;
+					width: 299px;
+				}
+				#map-canvas{
+					width: 299px;
+					height: 245px;
+				}
+				#sectionD{
+					background-color:white;
+					height: 250px;
+					width: 299px;
+				}
+				#sectionE{
+					background-color:white;
+					height: 250px;
+					width: 299px;
+				}
+				#fithTab{
+					margin-left:4px;
+				}
+				
+				.carousel-caption {
+					height: 90px;
+				}
+				.ChartPic{
+					width:305px;
+					height:240px;
+				}
+				#breakBot{
+					display:block;
+				}
+				
+				.CapHis{
+					margin-left:-1005px;
+					font-size: 109%;
+					font-weight:bold;
+				}
+				.carCap{
+					margin-left:-1055px;
+					font-size: 90%;
+				}
+				
+				
+				#notmatch{
+					height: 20px;width:305px;
+					text-align:left;
+					margin-left: -50px;
+					margin-top:-30px;
+				}
+			}
+			
+			
+			
+			@media screen and (min-width:551px) and (max-width:720px){
+				#States {
+					width:180px;
+				}
+				#StatesTD {
+					width:180px;
+				}
+				#Sta_v{
+					text-align: right;
+				}
+				.rl_shell {	
+					float: left/right;
+					overflow-x:auto;
+					max-width:500px;
+					height: 370px;
+					background-color: white;
+				}
+				#mainDiv {
+					height: 60px;width:500px;
+					margin-left: -255px; 
+				}
+				#myCarousel{
+					 width:500px;
+					 height:370px;
+				}
+				#Carousel1{
+					margin-bottom:-340px;
+				}
+				
+				#Carousel2{
+					margin-bottom:-340px;
+				}
+				
+				#Carousel3{
+					margin-bottom:-340px;
+				}
+				.carousel-indicators{
+					margin-left:60px;
+				}
+				#zilBot{
+					margin-top:5px;
+					margin-left:-35px;
+					position:relative;
+				}
+				
+				#sectionA{
+					background-color:white;
+					height: 370px;
+					width: 499px;
+				}
+				
+				#sectionB{
+					width: 500px;
+					height: 365px;
+				}
+				
+				#sectionC{
+					background-color:white;
+					width: 500px;
+					height: 365px;
+				}
+				#map-canvas{
+					width: 500px;
+					height: 365px;
+				}
+				#sectionD{
+					background-color:white;
+					height: 215px;
+					width: 500px;
+				}
+				#sectionE{
+					background-color:white;
+					height: 215px;
+					width: 500px;
+				}
+				#fithTab{
+					margin-left:70px;
+				}
+				.carousel-caption {
+					height: 95px;
+				}
+				.ChartPic{
+					width:505px;
+					height:360px;
+				}
+				#breakBot{
+					display:none;
+				}
+				.CapHis{
+					margin-left:-940px;
+					font-size: 120%;
+					font-weight:bold;
+				}
+				.carCap{
+					margin-left:-1000px;
+				}
+				
+				#notmatch{
+					height: 60px;width:430px;
+					margin-left: 130px;
+					margin-top:-60px;
+				}
+			}
+			
+			@media screen and (min-width:721px) and (max-width:900px){
+				#States {
+					width:180px;
+				}
+				#StatesTD {
+					width:180px;
+				}
+				#Sta_v{
+					text-align: right;
+				}
+				.rl_shell {	
+					float: left/right;
+					overflow-x:auto;
+					max-width:700px;
+					height: 370px;
+					background-color: white;
+				}
+				#mainDiv {
+					height: 60px;width:650px;
+					margin-left: -325px; 
+				}
+				#myCarousel{
+					 width:650px;
+					 height:370px;
+				}
+				#Carousel1{
+					margin-bottom:-350px;
+				}
+				
+				#Carousel2{
+					margin-bottom:-350px;
+				}
+				
+				#Carousel3{
+					margin-bottom:-350px;
+				}
+				.carousel-indicators{
+					margin-left:75px;
+				}
+				#zilBot{
+					margin-top:5px;
+					margin-left:-35px;
+					position:relative;
+				}
+				
+				#sectionA{
+					background-color:white;
+					height: 370px;
+					width: 649px;
+				}
+				
+				#sectionB{
+					width: 649px;
+					height: 365px;
+				}
+				
+				#sectionC{
+					background-color:white;
+					width: 649px;
+					height: 365px;
+				}
+				
+				#map-canvas{
+					width: 649px;
+					height: 365px;
+				}
+				#sectionD{
+					background-color:white;
+					height: 205px;
+					width: 649px;
+				}
+				#sectionE{
+					background-color:white;
+					height: 205px;
+					width: 649px;
+				}
+				#fithTab{
+					margin-left:135px;
+				}
+				.carousel-caption {
+					height: 95px;
+				}
+				.ChartPic{
+					width:520px;
+					height:357px;
+				}
+				#breakBot{
+					display:none;
+				}
+				.CapHis{
+					margin-left:-910px;
+					font-size: 120%;
+					font-weight:bold;
+				}
+				.carCap{
+					margin-left:-968px;
+				}
+				
+				#notmatch{
+					height: 60px;width:590px;
+					margin-left: 200px;
+					margin-top:-60px;
+				}
+			}
+			
+			
+			
+			@media screen and (min-width:901px){
+				#States {
+					width:80px;
+				}
+				#StatesTD {
+					width:230px;
+				}
+				#Sta_v{
+					text-align: left;
+				}
+				#mainDiv {
+					height: 260px;width:800px;
+					margin-left: -400px; 
+				}
+				#map-canvas{
+					height: 360px;
+					width:800px;
+				}
+				.map-canvas img {
+					border: none !important;
+					max-width: none !important;
+				}
+				#fithTab{
+					margin-left:250px;
+				}
+				#tabs{
+					background-color:white;
+				}
+				.carousel-indicators{
+					margin-left:90px;
+				}
+				.carousel-caption {
+					position: absolute;
+					z-index: 50;
+					left: -100px;
+					bottom: 0;
+					width: 1500px;
+					height: 100px;
+				}
+				
+				#Carousel1{
+					margin-bottom:-365px;
+				}
+				
+				#Carousel2{
+					margin-bottom:-365px;
+				}
+				
+				#Carousel3{
+					margin-bottom:-365px;
+				}
+				.carousel-caption {
+					position: absolute;
+					z-index: 50;
+					left: -100px;
+					bottom: 0;
+					width: 1500px;
+					height: 100px;
+				}
+				.ChartPic{
+					width:500px;
+					height:380px;
+				}
+				#breakBot{
+					display:none;
+				}
+				.CapHis{
+					margin-left:-900px;
+					font-size: 125%;
+					font-weight:bold;
+				}
+				.carCap{
+					margin-left:-980px;
+				}
+				#notmatch{
+					height: 260px;width:800px;
+					margin-left: 400px;
+					margin-top:-200px;
+				}
+			}
+			/* Popup container - can be anything you want */
+			.popup {
+			  position: relative;
+			  display: inline-block;
+			  cursor: pointer;
+			  -webkit-user-select: none;
+			  -moz-user-select: none;
+			  -ms-user-select: none;
+			  user-select: none;
+			}
+
+			/* The actual popup */
+			.popup .popuptext {
+			  visibility: hidden;
+			  width: 260px;
+			  background-color: #555;
+			  color: #fff;
+			  text-align: center;
+			  border-radius: 6px;
+			  padding: 8px 0;
+			  position: absolute;
+			  z-index: 1;
+			  bottom: 125%;
+			  left: 50%;
+			  margin-left: -80px;
+			  opacity:0.95 ;
+			}
+
+			/* Popup arrow */
+			.popup .popuptext::after {
+			  content: "";
+			  position: absolute;
+			  top: 100%;
+			  left: 50%;
+			  margin-left: -5px;
+			  border-width: 5px;
+			  border-style: solid;
+			  border-color: #555 transparent transparent transparent;
+			}
+
+			/* Toggle this class - hide and show the popup */
+			.popup .show {
+			  visibility: visible;
+			  -webkit-animation: fadeIn 1s;
+			  animation: fadeIn 1s;
+			}
+
+			/* Add animation (fade in the popup) */
+			@-webkit-keyframes fadeIn {
+			  from {opacity: 0;} 
+			  to {opacity: 0.95;}
+			}
+
+			@keyframes fadeIn {
+			  from {opacity: 0;}
+			  to {opacity:0.95 ;}
+			}
