@@ -1,23 +1,14 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST');
-    // $mysqli = new mysqli("cs-server.usc.edu:1111", "noury", "6389", "db1");
-	//$myPDO = new PDO('mysql:host=cs-server.usc.edu:1111;dbname=db1', 'user', '');
-	//$result = $myPDO->query("SELECT name, age FROM tb1");
-//----with PDO----------------------------------
+	header('Access-Control-Allow-Origin: *');
+	header('Access-Control-Allow-Methods: GET, POST');
 
 	$host = 'localhost';
 	$dbName = 'realEstateQueries';
 	$username = 'root';
-	$password = '6389';
+	$password = 'XXXXXXXXXXX'; // MySQL database password is hidden
 	 
 	$dbCon = new PDO("mysql:host=".$host.";dbname=".$dbName, $username, $password);
 	
-	//insert
-	//$sql = 'INSERT INTO tb1(name,age) VALUES(?,?)';
-	//$stmt = $dbCon->prepare($sql);
-	//$stmt->execute(array('Ham',"45"));
-	//$stmt->execute(array('Jack',"41"));
 	date_default_timezone_set('America/Los_Angeles');
 	$sql = "INSERT INTO searched (IP, time, address,city, state) VALUES ('".gethostbyaddr($_SERVER['REMOTE_ADDR'])."','".date('l-d-M-Y H:i:s', time())."','".$_GET['str']."', '".$_GET['cit']."', '".$_GET['sta']."')";
 	$stmt = $dbCon->prepare($sql);
@@ -40,5 +31,4 @@ header('Access-Control-Allow-Methods: GET, POST');
 	$phpJsn .= '{"Time":"'.$row[1].'",'.'"Address":"'.$row[2].'",'.'"City":"'.$row[3].'",'.'"State":"'.$row[4].'"}]}';
 
 	echo $_GET['callback']."(".json_encode($phpJsn).");";
-	//$result = $mysqli->query("SELECT lastname FROM employees");
 ?>

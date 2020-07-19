@@ -2,28 +2,21 @@
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST');
 
- if(isset($_GET['str']) && isset($_GET['cit']) && isset($_GET['sta'])){  //php code can be used almost everywhere in you file if it is "*.php" file
+ if(isset($_GET['str']) && isset($_GET['cit']) && isset($_GET['sta'])){ 
 				$street = $_GET['str'];
 				$city = $_GET['cit'];
 				$state = $_GET['sta'];
 				
 				$vowel = array(" ",",");
 				$dot = array(".");
-				//Note: Comments in the php section are starting with two slashes! It won't work for html parts. In html use the comment signs as it is coded in this file.
 				
-				$street = str_replace($vowel,"+",$street);  //str_replace is a strong function that already exists in php you don't need to deal with it. Just learn how to use it. "Learn==Google"
+				$street = str_replace($vowel,"+",$street); 
 				$city = str_replace($vowel,"+",$city);   
 				
-				// So just concatenate the strings to create the website that has to be searched.  In this link "zws-id=X1-ZWz1dy0afb2mff_8tgid" is hard coded because it was my id that I got from Zillow.
-				$address = 'http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz1dy0afb2mff_8tgid&address='.$street.'&citystatezip='.$city.'%2C+'.$state.'&rentzestimate=true';  
-				//$chart1 = 'http://www.zillow.com/webservice/GetChart.htm?zws-id=X1-ZWz1dy0afb2mff_8tgid&unit-type=percent&zpid='..'&width=300&height=150';
+				$address = 'http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=XXXXXXXXXXXXXXXXX&address='.$street.'&citystatezip='.$city.'%2C+'.$state.'&rentzestimate=true';  
 				$xml = simplexml_load_file($address);}
 				//$jason = json_encode($xml);
 				$jason = json_encode($xml);
-				
-				/* 
-				echo "here is by function:"."\r\n";
-				echo $jason."\r\n"; */
 				
 				$homedetails = ""; $rentLow = ""; $rentHigh = ""; $taxAssessment = ""; $rentChange = ""; $taxAssessmentYear = "";  $rentAmount = ""; $rentUpdated = ""; $bedrooms = ""; $priceLow = ""; $bathrooms = ""; $finishedSqFt = ""; $lotSizeSqFt = ""; $lastSoldPrice = "";
 				$useCode = ""; $valueChange = "";  $priceAmount = ""; $priceLastUpdated = ""; $longitude = "";$latitude = "";$zipcode = "";$state = "";$city = "";  $street = ""; $zipcode = ""; $signValueChange = "";
@@ -35,12 +28,10 @@ header('Access-Control-Allow-Methods: GET, POST');
 					$ch1url = 'http://www.zillow.com/app?chartDuration=1year&chartType=partner&height=300&page=webservice%2FGetChart&service=chart&showPercent=true&width=600&zpid='.$chid;
 					$ch1ur5 = 'http://www.zillow.com/app?chartDuration=5years&chartType=partner&height=300&page=webservice%2FGetChart&service=chart&showPercent=true&width=600&zpid='.$chid;
 					$ch1ur10 = 'http://www.zillow.com/app?chartDuration=10years&chartType=partner&height=300&page=webservice%2FGetChart&service=chart&showPercent=true&width=600&zpid='.$chid;
-								//'http://www.zillow.com/app?chartDuration=10years&chartType=partner&height=300&page=webservice%2FGetChart&service=chart&showPercent=true&width=600&zpid=2108691793'
-					           //'http://www.zillow.com/app?chartDuration=1year&chartType=partner&height=300&page=webservice%2FGetChart&service=chart&showPercent=true&width=600&zpid=2108691793"
 				}
 				
 				if ($chid!=""){
-					$thumbnailPicAddress = 'http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz1dy0afb2mff_8tgid&zpid='.$chid;
+					$thumbnailPicAddress = 'http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=XXXXXXXXXXXXX&zpid='.$chid;
 					$xml2 = simplexml_load_file($thumbnailPicAddress);
 					if (!empty($xml2->response) && !empty($xml2->response->images) && !empty($xml2->response->images->image[0]) && !empty($xml2->response->images->image[0]->url)) 
 						$thumbnailPic = $xml2->response->images->image[0]->url;
@@ -91,15 +82,4 @@ header('Access-Control-Allow-Methods: GET, POST');
 			
 				
 				echo $_GET['callback']."(".json_encode($phpJsn).");";
-				//echo json_encode($phpJsn);
-				
-				
-/*
-				
-				$phpJsn = '{"result":{"homedetails":"'.$homedetails.'","street":"'.$street.'","city":"'.$city.'","state":"'.$state.'","zipcode":"'.$zipcode.'","latitude":"'.$latitude.'","longitude":"'.$longitude.'","useCode":"'.$useCode.'","lastSoldPrice":"'.$lastSoldPrice.'","yearBuilt":"'.$yearBuilt.'","lastSoldDate":"'.$lastSoldDate.'","lotSizeSqFt":"'.$lotSizeSqFt.'","estimateLastUpdate":"'.$priceLastUpdated.'","estimateAmount":"'.$priceAmount.'","finishedSqFt":"'.$finishedSqFt.'","estimateValueChangeSign":"'.$rsValueChange.
-				
-				$return = json_encode($phpJsn);
-				echo json_decode($return);
-				
-*/
 ?>

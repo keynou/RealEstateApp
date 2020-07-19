@@ -1,44 +1,42 @@
-$('#States').focusin(function() {var div = $('#States').closest("div"); div.removeClass("has-error");$('#Sta_v').text(''); return true;});
-$('#city').focusin(function() {var div = $('#city').closest("div"); div.removeClass("has-error");$('#c_v').text(''); return true;});
-$('#street').focusin(function() {var div = $('#street').closest("div"); div.removeClass("has-error"); $('#st_v').text(''); return true;});
+		$('#States').focusin(function() {var div = $('#States').closest("div"); div.removeClass("has-error");$('#Sta_v').text(''); return true;});
+		$('#city').focusin(function() {var div = $('#city').closest("div"); div.removeClass("has-error");$('#c_v').text(''); return true;});
+		$('#street').focusin(function() {var div = $('#street').closest("div"); div.removeClass("has-error"); $('#st_v').text(''); return true;});
 
-//var mapOptions= {center: new google.maps.LatLng(34.020, -118.290),zoom: 12   };
-		
-			window.fbAsyncInit = function() {
-				FB.init({
-				  appId      : '671304866302022', // App ID
-				  status     : true,    // check login status
-				  cookie     : true,    // enable cookies to allow the
-										// server to access the session
-				  xfbml      : true,     // parse page for xfbml or html5
-										// social plugins like login button below
-				  version    : 'v2.1',  // Specify an API version
-				});
-				//Next, find out if the user is logged in
-				FB.getLoginStatus(function(response) {
-					if (response.status === 'connected') {
-						var uid = response.authResponse.userID;
-						accessToken = response.authResponse.accessToken;
+		window.fbAsyncInit = function() {
+			FB.init({
+			  appId      : 'XXXXXXXXXXXXXX', // App ID
+			  status     : true,    // check login status
+			  cookie     : true,    // enable cookies to allow the
+									// server to access the session
+			  xfbml      : true,     // parse page for xfbml or html5
+									// social plugins like login button below
+			  version    : 'v2.1',  // Specify an API version
+			});
+			//Next, find out if the user is logged in
+			FB.getLoginStatus(function(response) {
+				if (response.status === 'connected') {
+					var uid = response.authResponse.userID;
+					accessToken = response.authResponse.accessToken;
 
-						FB.api('/me', function(info) {
-							console.log(info);
-						});
+					FB.api('/me', function(info) {
+						console.log(info);
+					});
 
 
-						} else if (response.status === 'not_authorized') {
-							//User is logged into Facebook, but not your App
-					
-						} else {
-							if (k==1){
-							// User is not logged into Facebook at all
-							
-							SW=window.open('https://www.facebook.com/index.php','NewWin','toolbar=no,menubar=no,location=no,resizable=no,status=no,width=350,height=135,scrollbars=no')
-							// change the name, features and the figures of width and height above to customize the popup window.
-							SW.moveTo(190,190);
-							k=0;}
-						} //response.status
-					}); //getLoginStatus
-			}
+					} else if (response.status === 'not_authorized') {
+						//User is logged into Facebook, but not your App
+				
+					} else {
+						if (k==1){
+						// User is not logged into Facebook at all
+						
+						SW=window.open('https://www.facebook.com/index.php','NewWin','toolbar=no,menubar=no,location=no,resizable=no,status=no,width=350,height=135,scrollbars=no')
+						// change the name, features and the figures of width and height above to customize the popup window.
+						SW.moveTo(190,190);
+						k=0;}
+					} //response.status
+				}); //getLoginStatus
+		}
 		
 		// Additional JS functions here
 				
@@ -59,7 +57,6 @@ $('#street').focusin(function() {var div = $('#street').closest("div"); div.remo
 				
 				//href: 'http://yahoo.com',
 				link: myLink,
-				//image: 'http://iviewsource.com/images/viewsourcemonogram-sm.png',
 				picture: thPic,//myPic,//'http://iviewsource.com/images/viewsourcemonogram-sm.png', //'myPic',
 				name: myAddress,
 				caption: 'Property information from Zillow.com',
@@ -86,7 +83,7 @@ $('#street').focusin(function() {var div = $('#street').closest("div"); div.remo
 		  var js, fjs = d.getElementsByTagName(s)[0];
 		  if (d.getElementById(id)) return;
 		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=671304866302022&version=v2.0"; //language
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=XXXXXXXXXXXXXXX&version=v2.0"; //language
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 
@@ -407,17 +404,3 @@ $('#street').focusin(function() {var div = $('#street').closest("div"); div.remo
 					}
 					return false;
 			});
-			
-			
-
-/* 
-'<tr>'+ 
-													'<td width="250"> Property Type:</td> '+
-													'<td width="200"> <span id="b0"><script> if('+parsed[0].result.useCode+'!=""){$("#b0").html('+parsed[0].result.useCode+');}else $("#b0").html("-"); </script></span></td> '+
-												
-
-'<td width="350"> Last Sold Price:</td> '+
-													'<td id="b1" width="300" align="right"> <script> if(!empty('parsed[0].result.lastSoldPrice+')){$("#b1").html("$"+number_format(('+parsed[0].result.lastSoldPrice+')+0, 2, ".", ","));}else $("#b1").html("-"); </script></td>' + 
-													
-'</tr>'+
-													*/
