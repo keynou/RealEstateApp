@@ -19,7 +19,7 @@ header('Access-Control-Allow-Methods: GET, POST');
 				//$chart1 = 'http://www.zillow.com/webservice/GetChart.htm?zws-id=X1-ZWz1dy0afb2mff_8tgid&unit-type=percent&zpid='..'&width=300&height=150';
 				$xml = simplexml_load_file($address);}
 				//$jason = json_encode($xml);
-				$jason = json_encode($xml); //in this HW we were told not to use json functions becuase he returned jason is nasty
+				$jason = json_encode($xml);
 				
 				/* 
 				echo "here is by function:"."\r\n";
@@ -87,7 +87,7 @@ header('Access-Control-Allow-Methods: GET, POST');
 				
 					
 				$phpJsn = '{"result":{"homedetails":"'.$homedetails.'","street":"'.$street.'","city":"'.$city.'","state":"'.$state.'","zipcode":"'.$zipcode.'","latitude":"'.$latitude.'","longitude":"'.$longitude.'","thumPic":"'.$thumbnailPic.'","useCode":"'.$useCode.'","lastSoldPrice":"'.$lastSoldPrice.'","yearBuilt":"'.$yearBuilt.'","lastSoldDate":"'.$lastSoldDate.'","lotSizeSqFt":"'.$lotSizeSqFt.'","estimateLastUpdate":"'.$priceLastUpdated.'","estimateAmount":"'.$priceAmount.'","finishedSqFt":"'.$finishedSqFt.'","estimateValueChangeSign":"'.$rsValueChange.
-				'","imgn":"http:\/\/www-scf.usc.edu\/~csci571\/2014Spring\/hw6\/down_r.gif","imgp":"http:\/\/www-scf.usc.edu\/~csci571\/2014Spring\/hw6\/up_g.gif","estimateValueChange":"'.$valueChange.'","bathrooms":"'.$bathrooms.'","estimateValuationRangeLow":"'.$priceLow.'","estimateValuationRangeHigh":"'.$priceHigh.'","bedrooms":"'.$bedrooms.'","zestimateLastUpdate":"'.$rentUpdated.'","restimateAmount":"'.$rentAmount.'","taxAssessmentYear":"'.$taxAssessmentYear.'","restimateValueChangeSign":"'.$rSValueChange.'","restimateValueChange":"'.$rentChange.'","taxAssessment":"'.$taxAssessment.'","restimateValuationRangeLow":"'.$rentLow.'","restimateValuationRangeHigh":"'.$rentHigh.'"},"chart":{"year1":{"url":"'.$ch1url.'"},"years5":{"url":"'.$ch1ur5.'"},"years10":{"url":"'.$ch1ur10.'"}}}';
+				'","imgn":"http:\/\/www-scf.usc.edu\/~csci571\/down_r.gif","imgp":"http:\/\/www-scf.usc.edu\/~csci571\/up_g.gif","estimateValueChange":"'.$valueChange.'","bathrooms":"'.$bathrooms.'","estimateValuationRangeLow":"'.$priceLow.'","estimateValuationRangeHigh":"'.$priceHigh.'","bedrooms":"'.$bedrooms.'","zestimateLastUpdate":"'.$rentUpdated.'","restimateAmount":"'.$rentAmount.'","taxAssessmentYear":"'.$taxAssessmentYear.'","restimateValueChangeSign":"'.$rSValueChange.'","restimateValueChange":"'.$rentChange.'","taxAssessment":"'.$taxAssessment.'","restimateValuationRangeLow":"'.$rentLow.'","restimateValuationRangeHigh":"'.$rentHigh.'"},"chart":{"year1":{"url":"'.$ch1url.'"},"years5":{"url":"'.$ch1ur5.'"},"years10":{"url":"'.$ch1ur10.'"}}}';
 			
 				
 				echo $_GET['callback']."(".json_encode($phpJsn).");";
@@ -97,8 +97,6 @@ header('Access-Control-Allow-Methods: GET, POST');
 /*
 				
 				$phpJsn = '{"result":{"homedetails":"'.$homedetails.'","street":"'.$street.'","city":"'.$city.'","state":"'.$state.'","zipcode":"'.$zipcode.'","latitude":"'.$latitude.'","longitude":"'.$longitude.'","useCode":"'.$useCode.'","lastSoldPrice":"'.$lastSoldPrice.'","yearBuilt":"'.$yearBuilt.'","lastSoldDate":"'.$lastSoldDate.'","lotSizeSqFt":"'.$lotSizeSqFt.'","estimateLastUpdate":"'.$priceLastUpdated.'","estimateAmount":"'.$priceAmount.'","finishedSqFt":"'.$finishedSqFt.'","estimateValueChangeSign":"'.$rsValueChange.
-				'","imgn":"http://www-scf.usc.edu/~csci571/2014Spring/hw6/down_r.gif","imgp":"http://www-scf.usc.edu/~csci571/2014Spring/hw6/up_g.gif","estimateValueChange":"'.$valueChange.'","bathrooms":"'.$bathrooms.'","estimateValuationRangeLow":"'.$priceLow.'","estimateValuationRangeHigh":"'.$priceHigh.'","bedrooms":"'.$bedrooms.'","zestimateLastUpdate":"'.$rentUpdated.'","restimateAmount":"'.$rentAmount.'","taxAssessmentYear":"'.$taxAssessmentYear.'","restimateValueChangeSign":"'.$rSValueChange.'","restimateValueChange":"'.$rentChange.'","taxAssessment":"'.$taxAssessment.'","restimateValuationRangeLow":"'.$rentLow.'","restimateValuationRangeHigh":"'.$rentHigh.'"},"chart":{"year1":{"url":"'.$ch1url.'"},"years5":{"url":"'.$ch1ur5.'"},"years10":{"url":"'.$ch1ur10.'"}}}';
-			
 				
 				$return = json_encode($phpJsn);
 				echo json_decode($return);
